@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PastebinClone", "PastebinClone\PastebinClone.csproj", "{78D6AF62-3913-470E-A263-E9844A1043DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PastebinClone.Integration.Tests", "PastebinClone.Integration.Tests\PastebinClone.Integration.Tests.csproj", "{068BEE70-A7A3-4E72-B14F-92B0651721E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PastebinClone.Unit.Tests", "PastebinClone.Unit.Tests\PastebinClone.Unit.Tests.csproj", "{22B1EA95-0B54-44F1-8ED4-01B797EE693B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78D6AF62-3913-470E-A263-E9844A1043DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D6AF62-3913-470E-A263-E9844A1043DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D6AF62-3913-470E-A263-E9844A1043DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D6AF62-3913-470E-A263-E9844A1043DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068BEE70-A7A3-4E72-B14F-92B0651721E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{068BEE70-A7A3-4E72-B14F-92B0651721E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{068BEE70-A7A3-4E72-B14F-92B0651721E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{068BEE70-A7A3-4E72-B14F-92B0651721E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B1EA95-0B54-44F1-8ED4-01B797EE693B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B1EA95-0B54-44F1-8ED4-01B797EE693B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B1EA95-0B54-44F1-8ED4-01B797EE693B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B1EA95-0B54-44F1-8ED4-01B797EE693B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
