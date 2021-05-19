@@ -2,7 +2,7 @@
 
 ## Instructions
 
-Clone project. Add the path to directory containing files to be made public in appsettings.json. In the terminal, navigate to the project with the PastebinClone solution file and build and run the project.
+Clone project. Add the path to directory containing files to be made public in appsettings.json. In the terminal, navigate to the project containing the PastebinClone solution file and build and run the project.
 
 ```dotnet build```
 
