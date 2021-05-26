@@ -4,8 +4,8 @@ using PastebinClone.Models;
 
 namespace PastebinClone.Services.Interfaces
 {
-    public interface IFileCoordinator
+    public interface IReaders
     {
-        Task<IActionResult> FileEnumerator(ContentModel contentModel);
+        Task<IActionResult> GetFile(ContentModel contentModel);
     }
 }

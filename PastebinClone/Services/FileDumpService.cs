@@ -1,4 +1,3 @@
-using System;
 using System.IO.Abstractions;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -22,12 +21,13 @@ namespace PastebinClone.Services
 
         public string GetFiles(ContentModel contentModel, string extension)
         {
-            var latestVersion = GetVersionedFiles(contentModel, extension);
+            var files = GetAllFilesWithExtension(contentModel, extension);
+            var file = HighestVersionedFile(files, extension);
 
-            if (string.IsNullOrEmpty(latestVersion))
-                latestVersion = GetAllFilesWithExtension(contentModel, extension).FirstOrDefault();
+            if (string.IsNullOrEmpty(file))
+                file = files.FirstOrDefault();
 
-            return latestVersion;
+            return file;
         }
         
         public bool DirectoryExists(ContentModel contentModel)
@@ -37,16 +37,14 @@ namespace PastebinClone.Services
             return _fileSystem.Directory.Exists(path);
         }
 
-        private string GetVersionedFiles(ContentModel contentModel, string extension)
+        private string HighestVersionedFile(string[] files, string extension)
         {
             var regex = new Regex($".*\\.[0-9]*.{extension}");
             var digits = new Regex($".*\\.(?<version>[0-9]*).{extension}");
-
-            var files = GetAllFilesWithExtension(contentModel, extension);
-            var file = files.Where(x => regex.IsMatch(x))
+            
+            return files.Where(x => regex.IsMatch(x))
                 .OrderByDescending(x => digits.Match(x).Groups["version"].Value)
                 .FirstOrDefault();
-            return file;
         }
 
         private string[] GetAllFilesWithExtension(ContentModel contentModel, string extension)

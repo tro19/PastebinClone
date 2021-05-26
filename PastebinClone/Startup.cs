@@ -40,6 +40,9 @@ namespace PastebinClone
             services.AddSingleton<IHtmlFormatter, HtmlFormatter>();
             services.AddScoped<IDirectoryQuery, DirectoryQuery>();
             services.AddScoped<IFileSystem, FileSystem>();
+            services.AddScoped<IReaders, HtmlReader>();
+            services.AddScoped<IReaders, PdfReader>();
+            services.AddScoped<IReaders, ExcelReader>();
             services.AddMvc();
         }
 

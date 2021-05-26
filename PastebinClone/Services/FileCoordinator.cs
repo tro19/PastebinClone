@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using AngleSharp;
@@ -10,46 +11,20 @@ namespace PastebinClone.Services
 {
     public class FileCoordinator : IFileCoordinator
     {
-        private readonly IFileDumpService _fileDumpService;
-        private readonly IHtmlFormatter _htmlFormatter;
-
-        public FileCoordinator(IFileDumpService fileDumpService,
-                                IHtmlFormatter htmlFormatter)
+        private IEnumerable<IReaders> _readers;
+        public FileCoordinator(IEnumerable<IReaders> readers)
         {
-            _fileDumpService = fileDumpService;
-            _htmlFormatter = htmlFormatter;
+            _readers = readers;
         }
 
-        public async Task<IActionResult> GetPDF(ContentModel contentModel)
+        public async Task<IActionResult> FileEnumerator(ContentModel contentModel)
         {
-            var filePath = _fileDumpService.GetFiles(contentModel, "pdf");
-
-            return filePath is null ? null : new PhysicalFileResult(filePath, "application/pdf");
-        }
-
-        public async Task<IActionResult> GetExcel(ContentModel contentModel)
-        {
-            var filePath = _fileDumpService.GetFiles(contentModel, "xlsx");
-            
-            return filePath is null ?  null : new PhysicalFileResult(filePath,
-                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-        }
-        
-        public async Task<IActionResult> GetHtml(ContentModel contentModel)
-        {
-            var htmlFile = _fileDumpService.GetFiles(contentModel, "html");
-
-            if (htmlFile is not null)
+            foreach (var reader in _readers)
             {
-                var htmlDoc = await _htmlFormatter.HtmlTemplate(htmlFile);
-            
-                htmlDoc.Title = Path.GetFileName(htmlFile);
+                var result = await reader.GetFile(contentModel);
 
-                return new ContentResult()
-                {
-                    Content = htmlDoc.ToHtml(),
-                    ContentType = "text/html"
-                };
+                if (result is not null)
+                    return result;
             }
 
             return null;

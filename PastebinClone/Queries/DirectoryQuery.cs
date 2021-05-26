@@ -22,16 +22,7 @@ namespace PastebinClone.Queries
         {
             if (_fileDumpService.DirectoryExists(contentModel))
             {
-                var response = await _fileCoordinator.GetHtml(contentModel);
-               
-                if (response is not IActionResult)
-                    response = await _fileCoordinator.GetPDF(contentModel);
-                
-                if (response is not IActionResult)
-                    response = await _fileCoordinator.GetExcel(contentModel);
-                
-                return response;
-               
+                return await _fileCoordinator.FileEnumerator(contentModel);
             }
 
             return null;

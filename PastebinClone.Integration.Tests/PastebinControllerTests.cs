@@ -11,14 +11,14 @@ namespace PastebinClone.Integration.Tests
         [Fact]
         public async Task Filedump_Returns_Ok()
         {
-            var expected = "thisisakey";
+            var directory= "abcd";
             var client = new WebApplicationFactory<Startup>().CreateClient();
 
-            var result = await client.GetAsync("/filedump/getcontent?content=" + expected);
-            var key = await result.Content.ReadAsStringAsync();
+            var result = await client.GetAsync("/filedump/getcontent?content=" + directory);
+            var html = await result.Content.ReadAsStringAsync();
             
             result.IsSuccessStatusCode.Should().BeTrue();
-            key.Should().Be(expected);
+            html.Should().Be("<html><head><title>Content.3.html</title></head><body><p>Content 3</p></body></html>");
         }
     }
 }

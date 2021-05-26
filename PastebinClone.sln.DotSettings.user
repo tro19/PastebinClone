@@ -6,15 +6,8 @@
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=361589b8_002Dbff2_002D4468_002Dae01_002Dbfe2ad280aa4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetHtmlFiles_Returns_ListOfHtmlFiles #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::22B1EA95-0B54-44F1-8ED4-01B797EE693B::net5.0::PastebinClone.Unit.Tests.HtmlFormatterTests.GetTemplate_Returns_IDocument&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::22B1EA95-0B54-44F1-8ED4-01B797EE693B::net5.0::PastebinClone.Unit.Tests.UnitTest1.GetHtmlFiles_Returns_HighestVersionHtml&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+  &lt;Solution /&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=89e33956_002Dbf47_002D4bd4_002Db8d2_002D954dd8591a43/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetHtmlFiles_Returns_ListOfHtmlFiles" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::22B1EA95-0B54-44F1-8ED4-01B797EE693B::net5.0::PastebinClone.Unit.Tests.UnitTest1.GetHtmlFiles_ReturnsUnversionedHtmlFile_WhenNoVersionedFiles&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::22B1EA95-0B54-44F1-8ED4-01B797EE693B::net5.0::PastebinClone.Unit.Tests.UnitTest1.GetHtmlFiles_Returns_HighestVersionHtml&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::22B1EA95-0B54-44F1-8ED4-01B797EE693B::net5.0::PastebinClone.Unit.Tests.HtmlFormatterTests.GetTemplate_Returns_IDocument&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+  &lt;Solution /&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
